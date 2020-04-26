@@ -17,7 +17,6 @@ var methodOverride = require("method-override"),
 
 var blogSchema= new mongoose.Schema({
 	title:String,
-	img:String,
 	body: String,
 	date:{type:Date , default:Date.now}
 	});
