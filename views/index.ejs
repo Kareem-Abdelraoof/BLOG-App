@@ -1,0 +1,26 @@
+<%- include("partials/header")%>
+<div class="ui container main text">
+	<div class="ui huge header ">
+			RESTful Blog App
+	</div>	
+	<div class="ui items divided segment">
+			<% blogs.forEach(function(blog){ %>
+				<div class="item">
+					<div class="image">
+						<img src=<%= blog.img%> alt="there is an image !!">
+					</div>
+					<div class="content">
+						<a class="header" href="/blog/<%= blog._id %>"><%= blog.title %></a>
+						<div class="meta">
+							<%= blog.date.toDateString() %>
+						</div>
+						<div class="description">
+							<%= blog.body.substring(0,10) %> ...
+						</div>
+						<a class="ui button violet basic" href="/blog/<%= blog._id %>"> Read More!</a>
+					</div>
+				</div>
+			<% }) %>
+	</div>
+</div>
+<%- include("partials/footer")%>
